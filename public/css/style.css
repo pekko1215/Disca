@@ -1,0 +1,261 @@
+body {
+    margin:0;
+    background: black;
+}
+
+#game {
+    width:100%;
+    height:100%;
+    position: absolute;
+    display: none;
+}
+
+.minicard {
+    width:100px;
+    height:140px;
+    background-image:url('/image/back.png');
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display:inline-flex;
+    border:solid gray 2px;
+}
+
+.minicard.used {
+    background: #002100;
+    border:solid orangered 2px;
+}
+
+.minicard.character {
+    background:#2e2315;
+    border:solid orangered 2px;
+}
+
+.minicard:hover{
+    border:dotted darkgoldenrod 2px;
+    z-index:5;
+}
+
+.minicard >  img {
+    max-width: 90%;
+    max-height: 90%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+}
+
+.minicard > .data > .cost {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: solid brown;
+    background: #ccc;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.minicard > .data > .charge {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right:0;
+    margin:auto;
+    border: solid darkgreen;
+    background: #ccc;
+    border-radius: 25%;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#targetCharger {
+    transform:rotate(-90deg);
+    display:flex;
+    width:140px;
+    position: absolute;
+    left:5%;
+}
+
+#targetCharger > .minicard {
+    margin-right:-80px;
+}
+
+#charger {
+    transform:rotate(90deg);
+    display:flex;
+    width:140px;
+    float:right;
+    position: absolute;
+    right:5%;
+}
+
+#charger > .minicard {
+    margin-right:-80px;
+}
+
+#hand,#targetHand {
+    text-align: center;
+}
+
+#target{
+    height:50%;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#me{
+    height:50%;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.light {
+    animation: light 2s ease 0s infinite alternate;
+}
+
+@keyframes light {
+    0% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.8);
+    }
+    100% {
+        filter: brightness(1);
+    }
+}
+
+.message{
+    position: fixed;
+    width: 100vw;
+    height:25vh;
+    line-height:25vh;
+    top:0;
+    bottom:0;
+    opacity: 0.5;
+    text-align: center;
+    margin:auto auto;
+    background:gray;
+    font-size:20pt;
+}
+
+#cardView {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 500px;
+    height: 700px;
+    overflow: hidden;
+    background: white;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+#cardView.used{
+    background: #abcea9;
+}
+
+#cardView.character{
+    background: #cfc67e;
+}
+
+#cardView > .cost {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: solid black 4px;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    text-align: center;
+    font-size: 64px;
+    line-height: 64px;
+    background: orangered;
+    color: black;
+}
+
+#cardView > .name {
+    height: 50px;
+    background: #ccc;
+    position: absolute;
+    width: 89%;
+    top: 7px;
+    border: solid;
+    line-height: 50px;
+    left: 56px;
+    padding-left: 22px;
+    font-size: 22px;
+}
+
+
+#cardView > .image {
+    position: absolute;
+    width: 80%;
+    height: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 5px;
+    border: solid 3px gray;
+    top: 84px;
+}
+
+#cardView > .image > img {
+    width:100%;
+    height:100%;
+    object-fit: contain;
+}
+
+#cardView > .charge {
+    position: absolute;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 25%;
+    border: solid green 6px;
+    line-height: 50px;
+    font-size: 40px;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: white;
+}
+
+#cardView > .power {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: solid 5px yellowgreen;
+    line-height: 57px;
+    font-size: 40px;
+    text-align: center;
+}
+
+
+#cardView > .text {
+    width: 80%;
+    height: 23%;
+    position: absolute;
+    background: white;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 76px;
+    padding: 4px;
+}
